@@ -1,0 +1,22 @@
+/* ===============Telephone Input================== */
+.cmp-adaptiveform-telephoneinput {
+  @include component-box;
+}
+.cmp-adaptiveform-telephoneinput__widget {
+  @include component-widget;
+}
+.cmp-adaptiveform-telephoneinput__longdescription {
+  @include long-description;
+}
+.cmp-adaptiveform-telephoneinput__shortdescription {
+  @include short-description;
+}
+.cmp-adaptiveform-telephoneinput__questionmark{
+  @include question-mark;
+}
+.cmp-adaptiveform-telephoneinput__errormessage{
+  @include error-message;
+}
+.cmp-adaptiveform-telephoneinput[data-cmp-valid=false]{}
+
+.cmp-adaptiveform-telephoneinput[data-cmp-valid=true]{}

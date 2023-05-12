@@ -1,0 +1,25 @@
+/* ===============Number Input================== */
+
+.cmp-adaptiveform-numberinput {
+    @include component-box;
+}
+
+.cmp-adaptiveform-numberinput__label {
+    @include component-label;
+}
+
+.cmp-adaptiveform-numberinput__longdescription {
+    @include long-description;
+}
+
+.cmp-adaptiveform-numberinput__shortdescription {
+    @include short-description;
+}
+
+.cmp-adaptiveform-numberinput__questionmark {
+    @include question-mark;
+}
+
+.cmp-adaptiveform-numberinput__errormessage {
+    @include error-message;
+}

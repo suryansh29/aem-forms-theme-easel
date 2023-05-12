@@ -1,0 +1,76 @@
+/* ===============Accordion================== */
+
+.cmp-accordion {
+  @include component-box;
+}
+
+.cmp-accordion__item {
+  opacity: 1;
+}
+
+.cmp-accordion__button {
+  @include default-tab;
+  border: none;
+  border-bottom: $border-light;
+  border-width: 2px;
+}
+
+.cmp-accordion__button--expanded {
+  color: $accent;
+  border-color: $dark-gray;
+}
+
+.cmp-accordion__button--expanded:hover {
+  color: $accent;
+  border-color: $dark-gray;
+}
+
+.cmp-accordion__button:hover {
+  color: $dark-gray;
+
+}
+
+.cmp-accordion__title {
+  display: flex;
+  align-items: center;
+}
+
+.cmp-accordion__title::before {
+  display: block;
+  content: '';
+  background: url(./resources/images/Chevron-Right.svg) center center / cover no-repeat;
+  margin: 0 $space-s ;
+  height: 16px;
+  width: 16px;
+}
+
+.cmp-accordion__header {
+  padding: 0 $space-s;
+}
+
+.cmp-accordion__button:hover>.cmp-accordion__title:before {}
+
+.cmp-accordion__button.cmp-accordion__button--expanded .cmp-accordion__title:before {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+
+.cmp-accordion__label {
+  @include h2;
+}
+
+.cmp-accordion__panel {
+  @include tab-panel;
+}
+
+.cmp-accordion__longdescription {
+  @include long-description;
+}
+
+.cmp-accordion__shortdescription {
+  @include short-description;
+}
+
+.cmp-accordion__questionmark {
+  @include question-mark;
+}

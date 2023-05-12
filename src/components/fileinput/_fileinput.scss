@@ -1,0 +1,89 @@
+/* ===============File Input================== */
+
+.cmp-adaptiveform-fileinput {
+  @include component-box;
+}
+
+.cmp-adaptiveform-fileinput__label {
+  @include component-label;
+}
+
+.cmp-adaptiveform-fileinput__widget {}
+
+.cmp-adaptiveform-fileinput__widget::-webkit-file-upload-button {
+  visibility: hidden;
+  background-color: $very-light-gray;
+  border: none;
+  height: $tap-height;
+  border-radius: $button-radius;
+  font-weight: 500 !important;
+  padding: 0 $space-l;
+}
+
+br {
+  display: none;
+}
+
+.cmp-adaptiveform-fileinput__widgetlabel::before {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(./resources/images/file-attach.svg) center center / cover no-repeat;
+}
+
+.cmp-adaptiveform-fileinput__widgetlabel {
+  @include secondary-button;
+  margin: $space-xs 0;
+  display: flex;
+  column-gap: $space-xs;
+  align-items: center;
+  pointer-events: all;
+}
+
+input[type="file"] {
+  column-gap: $space-l !important;
+}
+
+.cmp-adaptiveform-fileinput__longdescription {
+  @include long-description;
+}
+
+.cmp-adaptiveform-fileinput__shortdescription {
+  @include short-description;
+}
+
+.cmp-adaptiveform-fileinput__questionmark {
+  @include question-mark;
+}
+
+.cmp-adaptiveform-fileinput__errormessage {
+  @include error-message;
+}
+
+.cmp-adaptiveform-fileinput[data-cmp-valid=false] {}
+
+.cmp-adaptiveform-fileinput[data-cmp-valid=true] {}
+
+.cmp-adaptiveform-fileinput__filelist {
+  padding: 0;
+  @include list;
+}
+
+.cmp-adaptiveform-fileinput__fileitem {
+  @include list-item;
+}
+
+.cmp-adaptiveform-fileinput__filename {
+  position: static;
+}
+
+.cmp-adaptiveform-fileinput__filedelete {
+  float: right;
+  font-size: $font-m;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: 500;
+  color: $error;
+  cursor: pointer;
+}

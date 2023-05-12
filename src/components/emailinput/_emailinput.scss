@@ -1,0 +1,22 @@
+/* ===============Email Input================== */
+.cmp-adaptiveform-emailinput {
+  @include component-box;
+}
+.cmp-adaptiveform-emailinput__widget {
+  @include component-widget;
+}
+.cmp-adaptiveform-emailinput__longdescription {
+  @include long-description;
+}
+.cmp-adaptiveform-emailinput__shortdescription {
+  @include short-description;
+}
+.cmp-adaptiveform-emailinput__questionmark{
+  @include question-mark;
+}
+.cmp-adaptiveform-emailinput__errormessage{
+  @include error-message;
+}
+.cmp-adaptiveform-emailinput[data-cmp-valid=false]{}
+
+.cmp-adaptiveform-emailinput[data-cmp-valid=true]{}
