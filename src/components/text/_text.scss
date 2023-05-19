@@ -1,6 +1,4 @@
-/* ===============Text================== */
 .cmp-adaptiveform-text {
-  @include body-text;
+  color: $dark-gray;
+  font-size: $font-m;
 }
-
-.text {}

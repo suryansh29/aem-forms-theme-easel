@@ -1,31 +1,21 @@
-.cmp-tabs{
- @include component-box;
-}
+.cmp-tabs {
+  @include container;
 
-.cmp-tabs__tablist {
-  @include tab-list;
-}
+  &__label {
+    @include panel-label;
+  }
 
-.cmp-tabs__tabpanel {
-  @include tab-panel;
-}
+  @include description;
 
-.cmp-tabs__tab {
-  @include default-tab;
-}
+  &__tablist {
+    @include tab-list;
+  }
 
-.cmp-tabs__label {
-  @include h2;
-}
+  &__tab {
+    @include tab;
+  }
 
-.cmp-tabs__longdescription {
-  @include long-description;
-}
-
-.cmp-tabs__shortdescription {
-  @include short-description;
-}
-
-.cmp-tabs__questionmark {
-  @include question-mark;
+  &__tabpanel {
+    @include tab-panel;
+  }
 }

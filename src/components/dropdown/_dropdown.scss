@@ -1,24 +1,18 @@
-/* ===============Drop Down================== */
-
-.cmp-adaptiveform-dropdown__widget {
-  appearance: none;
-  cursor: pointer;
-  @include component-widget;
-  background: url(./resources/images/chevron-down.svg);
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-}
-
-
-
 .cmp-adaptiveform-dropdown {
-  @include component-box;
+  @include input;
+
+  &__widget {
+    @include widget;
+    appearance: none;
+    cursor: pointer;
+    background: url(./resources/images/chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+  }
+  [dir='rtl'] &__widget {
+    background-position: left 10px center;
+  }
 }
-
-select {}
-
-
-
 
 select::after {
   content: '';
@@ -29,26 +23,6 @@ select::after {
     left: 0;
   }
 }
-
-.cmp-adaptiveform-dropdown__longdescription {
-  @include long-description;
-}
-
-.cmp-adaptiveform-dropdown__shortdescription {
-  @include short-description;
-}
-
-.cmp-adaptiveform-dropdown__questionmark {
-  @include question-mark;
-}
-
-.cmp-adaptiveform-dropdown__errormessage {
-  @include error-message;
-}
-
-.cmp-adaptiveform-dropdown[data-cmp-valid=false] {}
-
-.cmp-adaptiveform-dropdown[data-cmp-valid=true] {}
 
 .cmp-adaptiveform-dropdown__widget[multiple='multiple'] {
   height: 80px;

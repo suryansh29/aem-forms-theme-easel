@@ -1,38 +1,8 @@
 .cmp-adaptiveform-textinput {
-  @include component-box;
+  @include input;
 }
-
-
-input {
-  @include component-widget;
-}
-
-label {}
-
-.cmp-adaptiveform-textinput__label {
-  @include component-label;
-
-}
-
-
-.cmp-adaptiveform-textinput__longdescription {
-  @include long-description;
-}
-
-.cmp-adaptiveform-textinput__shortdescription {
-  @include short-description;
-}
-
-.cmp-adaptiveform-textinput__questionmark {
-  @include question-mark;
-}
-
-.cmp-adaptiveform-textinput__errormessage {
-  @include error-message;
-}
-
 
 textarea.cmp-adaptiveform-textinput__widget {
-  @include component-widget;
+  @include widget;
   height: 80px;
 }

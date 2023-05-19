@@ -1,57 +1,30 @@
-/* ===============Checkbox group================== */
-
-
-
 .cmp-adaptiveform-checkboxgroup {
-  @include component-box;
+  @include container;
+
+  &__label {
+    @include label;
+  }
+
+  &__widget {
+    @include list-container;
+  }
+
+  @include description;
+
+  &__errormessage {
+    @include error-message
+  }
+  &-item {
+    @include list-item;
+  }
+  &-item &__label {
+    @include checkbox-label;
+  }
+
+  input[type='checkbox'] {
+    height: 1rem;
+    width: 1rem;
+    cursor: pointer;
+    outline: none;
+  }
 }
-
-
-input[type='checkbox'] {
-  height: 1rem;
-  width: 1rem;
-
-  cursor: pointer;
-  outline: none !important;
-}
-
-
-.cmp-adaptiveform-checkbox__label {
-  @include list-item;
-}
-
-.cmp-adaptiveform-checkboxgroup-item {}
-
-
-.cmp-adaptiveform-checkboxgroup__widget {
-  @include list;
-
-}
-
-.cmp-adaptiveform-checkboxgroup__longdescription {
-  @include long-description;
-}
-
-.cmp-adaptiveform-checkboxgroup__shortdescription {
-  @include short-description;
-}
-
-.cmp-adaptiveform-checkboxgroup__questionmark {
-  @include question-mark;
-}
-
-.cmp-adaptiveform-checkboxgroup__errormessage {
-  @include error-message;
-}
-
-// .cmp-adaptiveform-checkboxgroup[data-cmp-valid=false]{
-//   background: $light-error;
-//   border: 0 solid $error;
-//   border-left-width: 4px;
-//   padding-left: 5px;
-// }
-// .cmp-adaptiveform-checkboxgroup[data-cmp-valid=true]{
-//   border: 0 solid $success;
-//   border-left-width: 4px;
-//   padding-left: 5px;
-// }

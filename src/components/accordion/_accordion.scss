@@ -1,76 +1,64 @@
-/* ===============Accordion================== */
-
 .cmp-accordion {
-  @include component-box;
-}
+  @include container;
+  @include description;
 
-.cmp-accordion__item {
-  opacity: 1;
-}
+  &__item {
+    opacity: 1;
+  }
 
-.cmp-accordion__button {
-  @include default-tab;
-  border: none;
-  border-bottom: $border-light;
-  border-width: 2px;
-}
+  &__header {
+    padding: 0 $space-s;
+  }
 
-.cmp-accordion__button--expanded {
-  color: $accent;
-  border-color: $dark-gray;
-}
+  &__label {
+    @include panel-label;
+  }
 
-.cmp-accordion__button--expanded:hover {
-  color: $accent;
-  border-color: $dark-gray;
-}
+  &__button {
+    @include tab;
+    border: none;
+    border-bottom: $border-light;
+    border-width: 2px;
 
-.cmp-accordion__button:hover {
-  color: $dark-gray;
+    &:hover {
+      color: $dark-gray;
+    }
 
-}
+    &--expanded {
+      color: $primary;
+      border-color: $dark-gray;
 
-.cmp-accordion__title {
-  display: flex;
-  align-items: center;
-}
+      &:hover {
+        color: $primary;
+        border-color: $dark-gray;
+      }
+    }
+  }
 
-.cmp-accordion__title::before {
-  display: block;
-  content: '';
-  background: url(./resources/images/Chevron-Right.svg) center center / cover no-repeat;
-  margin: 0 $space-s ;
-  height: 16px;
-  width: 16px;
-}
+  &__button &__title {
+    &::before {
+      display: block;
+      content: '';
+      background: url(./resources/images/Chevron-Right.svg) center center / cover no-repeat;
+      margin: 0 $space-s ;
+      height: 16px;
+      width: 16px;
+    }
+  }
 
-.cmp-accordion__header {
-  padding: 0 $space-s;
-}
+  &__title {
+    display: flex;
+    align-items: center;
+  }
 
-.cmp-accordion__button:hover>.cmp-accordion__title:before {}
+  .cmp-accordion__button.cmp-accordion__button--expanded &__title {
+    &::before {
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+    }
+  }
 
-.cmp-accordion__button.cmp-accordion__button--expanded .cmp-accordion__title:before {
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-}
-
-.cmp-accordion__label {
-  @include h2;
-}
-
-.cmp-accordion__panel {
-  @include tab-panel;
-}
-
-.cmp-accordion__longdescription {
-  @include long-description;
-}
-
-.cmp-accordion__shortdescription {
-  @include short-description;
-}
-
-.cmp-accordion__questionmark {
-  @include question-mark;
+  &__panel {
+    @include tab-panel;
+  }
 }
