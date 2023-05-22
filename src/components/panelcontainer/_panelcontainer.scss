@@ -1,0 +1,20 @@
+/* ===============Panel Container================== */
+.cmp-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &[data-cmp-is="adaptiveFormPanel"] {
+    margin: 0 0 $space-l 0;
+  }
+
+  &__label {
+    @include panel-label;
+  }
+
+  @include description;
+}
+
+.panelcontainer:last-child>[data-cmp-is="adaptiveFormPanel"] {
+  margin-bottom: 0;
+}

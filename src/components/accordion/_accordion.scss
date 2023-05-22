@@ -1,0 +1,64 @@
+.cmp-accordion {
+  @include container;
+  @include description;
+
+  &__item {
+    opacity: 1;
+  }
+
+  &__header {
+    padding: 0 $space-s;
+  }
+
+  &__label {
+    @include panel-label;
+  }
+
+  &__button {
+    @include tab;
+    border: none;
+    border-bottom: $border-light;
+    border-width: 2px;
+
+    &:hover {
+      color: $dark-gray;
+    }
+
+    &--expanded {
+      color: $primary;
+      border-color: $dark-gray;
+
+      &:hover {
+        color: $primary;
+        border-color: $dark-gray;
+      }
+    }
+  }
+
+  &__button &__title {
+    &::before {
+      display: block;
+      content: '';
+      background: url(./resources/images/Chevron-Right.svg) center center / cover no-repeat;
+      margin: 0 $space-s ;
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  .cmp-accordion__button.cmp-accordion__button--expanded &__title {
+    &::before {
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+    }
+  }
+
+  &__panel {
+    @include tab-panel;
+  }
+}

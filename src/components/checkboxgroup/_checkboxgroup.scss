@@ -1,0 +1,30 @@
+.cmp-adaptiveform-checkboxgroup {
+  @include container;
+
+  &__label {
+    @include label;
+  }
+
+  &__widget {
+    @include list-container;
+  }
+
+  @include description;
+
+  &__errormessage {
+    @include error-message
+  }
+  &-item {
+    @include list-item;
+  }
+  &-item &__label {
+    @include checkbox-label;
+  }
+
+  input[type='checkbox'] {
+    height: 1rem;
+    width: 1rem;
+    cursor: pointer;
+    outline: none;
+  }
+}

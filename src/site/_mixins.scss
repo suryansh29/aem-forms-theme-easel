@@ -1,0 +1,485 @@
+@mixin container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &[data-cmp-valid=false] input,
+  &[data-cmp-valid=false] textarea,
+  &[data-cmp-valid=false] select {
+    background: $light-error ;
+    border: $border-error ;
+    outline-color: $error;
+  }
+
+  &[data-cmp-valid=false]>&__shortdescription {
+    display: none;
+  }
+
+  &[data-cmp-valid=false]>&__errormessage {
+    display: flex;
+    align-items: center;
+  }
+
+  &:has(input:required) &__label::after,
+  &:has(select:required) &__label::after,
+  &:has(textarea:required) &__label::after,
+  div[data-cmp-required=true]>label::after {
+    content: ' *';
+    font-weight: bold;
+    color: $error;
+  }
+
+  // remove this code
+  &.cmp-tabs,
+  &.cmp-adaptiveform-wizard,
+  &.cmp-accordion {
+    margin: $space-l 0;
+  }
+
+}
+
+@mixin label {
+  padding-right: $space-m;
+  box-sizing: border-box;
+  opacity: 1;
+  color: $dark-gray;
+  padding: 0;
+  font-size: $font-m;
+  pointer-events: none;
+  z-index: 11;
+}
+
+@mixin checkbox-label {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  gap: $space-s;
+}
+
+@mixin panel-label {
+  font-size: $font-l;
+  font-weight: 500;
+  color: $dark-gray;
+  opacity: 1;
+  margin-top: 0;
+  margin-bottom: $space-s;
+  position: static;
+}
+
+@mixin widget {
+  border-radius: 0;
+  font-size: $font-m;
+  height: $field-height;
+  background-color: transparent;
+  border: $border-light;
+  border-radius: $field-radius;
+  padding: 0 $space-s;
+  margin: $space-xs 0;
+  outline: $focus-outline;
+  outline-width: 0px;
+
+  &:hover:not([disabled]) {
+    border: $border-dark;
+    transition: border 0.3s ease-out;
+  }
+
+  &:focus:not([disabled]) {
+    background-color: white;
+    border-color: transparent;
+    outline-offset: 0;
+    outline: $focus-outline;
+    transition: outline 0.1s ease-out, border 0.1s ease-out;
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+  }
+}
+
+@mixin long-description {
+  display: flex;
+  align-items: center;
+  background-color: $background-color;
+  border-radius: $field-radius;
+  opacity: 1;
+  color: $dark-gray;
+  padding: $space-s;
+  font-size: $font-s;
+  font-weight: 500;
+  pointer-events: none;
+  margin: $space-xs 0;
+  column-gap: $space-s;
+
+  &::before {
+    content: '';
+    background: url(./resources/images/long-description.svg) center center / cover no-repeat;
+    height: 16px;
+    min-width: 16px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@mixin short-description {
+  display: flex;
+  position: static;
+  font-size: $font-s;
+  font-weight: 500;
+  color: $gray;
+  margin: 0 0 $space-s 0;
+}
+
+@mixin question-mark {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  padding: 0;
+  width: $font-m;
+  height: $font-m;
+  border-radius: 9px;
+  background: url(./resources/images/question.svg) center center / cover no-repeat;
+  cursor: pointer;
+  border: none;
+
+  body[dir="rtl"] & {
+    left: 0;
+    right: initial;
+  }
+}
+
+@mixin error-message {
+  display: none;
+  color: $error;
+  font-size: $font-s;
+  font-weight: 500;
+  margin: 0;
+
+  &::before {
+    content: '';
+    background: url(./resources/images/error.svg) center center / cover no-repeat;
+    margin-right: $space-xs;
+    height: 16px;
+    min-width: 16px;
+  }
+}
+
+// description contains the long-description, short-description, question-mark
+@mixin description {
+  &__longdescription {
+    @include long-description;
+  }
+
+  &__shortdescription {
+    @include short-description;
+  }
+
+  &__questionmark {
+    @include question-mark;
+  }
+}
+
+// input contains the container, label, widget, description, error
+@mixin input {
+  @include container;
+
+  &__label {
+    @include label;
+  }
+
+  &__widget {
+    @include widget;
+  }
+
+  @include description;
+
+  &__errormessage {
+    @include error-message
+  }
+}
+
+@mixin primary-button {
+  width: 100%;
+  display: block;
+  background: $primary;
+  border: none;
+  border-radius: $button-radius;
+  height: $tap-height;
+  padding: 0 $space-m;
+  cursor: pointer;
+  color: white;
+  font-size: $font-m;
+  font-weight: 500;
+
+  &:hover {
+    position: relative;
+    box-shadow: 0 6px 12px 1px rgba($color: #000000, $alpha: .25);
+    transform: translateY(-5%);
+    scale: 102%;
+    transition: box-shadow 0.1s ease-out, transform 0.1s ease-out;
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+    cursor: default;
+  }
+
+  &[data-cmp-enabled]:not([data-cmp-enabled=true]) {
+    background: $gray;
+    color: $very-light-gray;
+  }
+
+  @media (min-width: 640px) {
+    width: fit-content;
+  }
+}
+
+@mixin secondary-base-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: static;
+  align-self: flex-start;
+  background: $background-color;
+  border-radius: $button-radius;
+  box-shadow: 0 6px 12px 1px rgba($color: #000000, $alpha: 0);
+  vertical-align: text-bottom;
+  cursor: pointer;
+  color: $primary;
+  font-size: $font-m;
+  padding: $space-s $space-m;
+  font-weight: 500;
+  margin: $space-s 0;
+  opacity: 1;
+
+  @media (min-width: 640px) {
+    width: fit-content;
+  }
+}
+
+@mixin secondary-button {
+  @include secondary-base-button;
+
+  &:hover {
+    position: relative;
+    background-color: $very-light-gray;
+    box-shadow: 0 6px 12px 1px rgba($color: #000000, $alpha: .075);
+    transform: translateY(-5%);
+    scale: 102%;
+    transition: box-shadow 0.1s ease-out, transform 0.1s ease-out, background-color 0.1s ease-out;
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+    cursor: default;
+  }
+
+}
+
+// for tabs on top & wizard
+@mixin tab-list {
+  padding: 0 $space-s;
+  counter-reset: section;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  margin-bottom: 0;
+}
+
+@mixin tab {
+  padding: 0;
+  background-color: transparent;
+  min-height: $tap-height;
+  line-height: 1.2;
+  color: $gray;
+  margin-right: $space-m;
+  font-size: $font-m;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  border-radius: 0;
+  border-width: 2px;
+
+  &--active {
+    color: $primary;
+    border-color: $dark-primary;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+
+  &--active::after {
+    content: '—';
+    display: none;
+    color: $primary;
+  }
+
+  &--active:hover {
+    border-bottom-color: $primary;
+  }
+
+  &:hover {
+    color: $dark-gray;
+    border-bottom-color: $very-light-gray;
+  }
+
+}
+
+@mixin tab-panel {
+  padding: $space-l;
+  border: $border-light;
+  border-width: 1px;
+  border-radius: $button-radius;
+  background-color: white;
+  box-shadow: 0 6px 12px 1px rgba($color: #000000, $alpha: .03);
+
+  @media (max-width: 480px) {
+    padding: $space-m;
+    width: 100%;
+  }
+}
+
+// wizard tab
+@mixin wizard-tab {
+  @include tab;
+  column-gap: $space-s;
+  padding: 0;
+  border-bottom-width: 2px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-size: $font-m;
+  font-weight: 500;
+  transition: flex-grow ease .3s;
+  border-radius: 0;
+  border-bottom-width: 2px;
+  border-bottom: $border-light;
+  border-color: transparent;
+
+  &::before {
+    counter-increment: section;
+    content: counter(section);
+    margin-right: 0;
+    background-color: $very-light-gray;
+    padding: 6px;
+    line-height: .56;
+    border-radius: $button-radius;
+    color: $dark-gray;
+    text-align: center;
+    font-size: $font-s;
+    font-weight: bold;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &--active {
+    flex-grow: 1;
+    transition: flex-grow ease .3s;
+    color: $primary;
+    border-bottom: $focus-outline;
+    background-color: transparent;
+  }
+
+  &--active::before {
+    counter-increment: section;
+    content: counter(section);
+    margin-right: $space-s;
+    background-color: $primary;
+    padding: 6px;
+    line-height: .56;
+    border-radius: $button-radius;
+    color: white;
+    text-align: center;
+    font-size: $font-s;
+    font-weight: bold;
+  }
+}
+
+@mixin wizard-next-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $tap-height;
+  position: static;
+  cursor: pointer;
+  @include secondary-button;
+
+  &::before {
+    content: 'Next';
+    position: static;
+  }
+}
+
+@mixin wizard-previous-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $tap-height;
+  position: static;
+  cursor: pointer;
+  @include secondary-button;
+
+  &::before {
+    content: 'Previous';
+    position: static;
+  }
+}
+
+@mixin list-container {
+  pointer-events: all;
+  margin: 0;
+  display: flex;
+  margin: $space-xs 0;
+
+  &.VERTICAL {
+    flex-direction: column;
+    row-gap: 0;
+  }
+
+  &.HORIZONTAL {
+    flex-direction: row;
+    column-gap: 0;
+    flex-wrap: wrap;
+  }
+}
+
+@mixin list-item {
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  color: $dark-gray;
+  column-gap: $space-s;
+  position: static;
+  opacity: 1;
+  border-radius: $button-radius;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: $space-s;
+
+  &:hover {
+    background-color: $background-color;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    color: $dark-gray;
+  }
+
+  &:focus-within {
+    outline: $focus-outline;
+  }
+}
+
+div[data-cmp-is="adaptiveFormDropDown"],
+div[data-cmp-is="adaptiveFormDatePicker"],
+div[data-cmp-is="adaptiveFormNumberInput"],
+div[data-cmp-is="adaptiveFormTextInput"],
+div[data-cmp-is="adaptiveFormCheckBoxGroup"],
+div[data-cmp-is="adaptiveFormFileInput"],
+div[data-cmp-is="adaptiveFormRadioButton"] {
+  border: none;
+  margin: $space-s 0;
+}

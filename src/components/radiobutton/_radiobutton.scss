@@ -1,0 +1,34 @@
+.cmp-adaptiveform-radiobutton {
+  @include container;
+
+  &__label {
+    @include label;
+  }
+
+  &__widget {
+    @include list-container;
+  }
+
+  @include description;
+
+  &__errormessage {
+    @include error-message;
+  }
+
+  &__option {
+    &__label {
+      @include list-item;
+    }
+  }
+
+  input[type="radio"] {
+    height: 1.2rem;
+    width: 1.2rem;
+    cursor: pointer;
+    outline: none;
+  }
+
+  span {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,49 @@
+//== Font
+
+$font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-title: 'Source Serif Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
+// ====== font size======
+$font-xl: 40px;
+$font-l: 24px;
+$font-m: 16px;
+$font-s: 12px;
+
+// ====== colors======
+$dark-gray: rgb(22, 22, 22);
+$gray: rgb(109, 109, 109);
+$light-gray: #969696;
+$very-light-gray: #ddd;
+$background-color: #eee;
+$white: #fff;
+$error: #eb3c36;
+$light-error: rgba(235, 60, 54, 0.05);
+$primary: $dark-gray;
+$dark-primary: $dark-gray;
+$disabled-color: $background-color;
+
+$focus-outline: 2px $primary solid;
+$error-outline: 2px $error solid;
+$border-light: 2px $background-color solid;
+$border-error: 2px $error solid;
+$border-dark: 2px $light-gray solid;
+
+
+
+// ====== space ======
+$space-xs: 4px;
+$space-s: 12px;
+$space-m: 36px;
+$space-l: 72px;
+$space-xl: 144px;
+
+$field-radius: 6px;
+$button-radius: 6px;
+$tap-height: 48px;
+$field-height: 48px;
+
+
+//== Grid
+
+$max_col: 12;

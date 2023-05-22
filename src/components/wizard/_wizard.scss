@@ -1,0 +1,43 @@
+.cmp-adaptiveform-wizard {
+  @include container;
+
+  &__label {
+    @include panel-label;
+  }
+
+  @include description;
+
+  &__tabs-container {
+    max-width: 100%;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  &__tabList {
+    @include tab-list;
+  }
+
+  &__tab {
+    @include wizard-tab;
+
+    // &--active~.cmp-adaptiveform-wizard__tab {
+    //   color: $gray;
+
+    //   &::before {
+    //     color: $dark-gray;
+    //   }
+    // }
+  }
+
+  &__wizardpanel {
+    @include tab-panel;
+  }
+
+  &__previousNav {
+    @include wizard-previous-button;
+  }
+
+  &__nextNav {
+    @include wizard-next-button;
+  }
+}
