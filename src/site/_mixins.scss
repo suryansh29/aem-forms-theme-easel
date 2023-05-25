@@ -306,12 +306,12 @@
   border-width: 2px;
 
   &--active {
-    // color: $primary;
+    color: $primary;
     border-color: $primary;
     font-weight: 500;
     display: flex;
     align-items: center;
-    background-color: $light-primary;
+    // background-color: $light-primary;
   }
 
   &--active::after {
