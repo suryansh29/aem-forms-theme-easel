@@ -1,0 +1,36 @@
+.cmp-verticaltabs {
+  @include container;
+
+  &__label {
+    @include panel-label;
+  }
+
+  @include description;
+  &__tabs-container{
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__tablist {
+    @include tab-list;
+    width: 200px;
+    display: block;
+    border: $border-light;
+    border-bottom: none;
+    border-radius: $button-radius;
+    padding: 0;
+    margin-right: 12px;
+  }
+
+  &__tab {
+    @include tab;
+    border-bottom: $border-light;
+    margin: 0;
+    padding-left: 12px;
+  }
+
+  &__tabpanel {
+    @include tab-panel;
+    flex: 1;
+  }
+}

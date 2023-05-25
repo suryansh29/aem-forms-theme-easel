@@ -29,12 +29,12 @@
     color: $error;
   }
 
-  // remove this code
-  &.cmp-tabs,
-  &.cmp-adaptiveform-wizard,
-  &.cmp-accordion {
-    margin: $space-l 0;
-  }
+  // // remove this code
+  // &.cmp-tabs,
+  // &.cmp-adaptiveform-wizard,
+  // &.cmp-accordion {
+  //   margin: $space-l 0;
+  // }
 
 }
 
@@ -209,7 +209,7 @@
   height: $tap-height;
   padding: 0 $space-m;
   cursor: pointer;
-  color: white;
+  color: #000;
   font-size: $font-m;
   font-weight: 500;
 
@@ -233,6 +233,7 @@
 
   @media (min-width: 640px) {
     width: fit-content;
+    min-width: 200px;
   }
 }
 
@@ -256,6 +257,7 @@
 
   @media (min-width: 640px) {
     width: fit-content;
+    min-width: 200px;
   }
 }
 
@@ -304,11 +306,12 @@
   border-width: 2px;
 
   &--active {
-    color: $primary;
-    border-color: $dark-primary;
+    // color: $primary;
+    border-color: $primary;
     font-weight: 500;
     display: flex;
     align-items: center;
+    background-color: $light-primary;
   }
 
   &--active::after {
@@ -323,13 +326,12 @@
 
   &:hover {
     color: $dark-gray;
-    border-bottom-color: $very-light-gray;
   }
 
 }
 
 @mixin tab-panel {
-  padding: $space-l;
+  padding: 12px 40px;
   border: $border-light;
   border-width: 1px;
   border-radius: $button-radius;

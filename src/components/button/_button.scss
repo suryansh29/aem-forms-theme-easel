@@ -32,3 +32,13 @@
   left: 0;
   z-index: 12;
 }
+.reset{
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 12;
+  background: #fff;
+}
+.reset .cmp-adaptiveform-button{
+  flex-direction: row-reverse;
+}
