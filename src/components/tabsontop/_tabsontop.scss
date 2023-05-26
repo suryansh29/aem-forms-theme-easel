@@ -18,4 +18,33 @@
   &__tabpanel {
     @include tab-panel;
   }
+  &__hamburger-button{
+    visibility: hidden;
+  }
+  @media (max-width: 720px) {
+    &__hamburger-button{
+      visibility: visible;
+      background: url(./resources/images/hamburger.svg) center center / cover no-repeat;
+      width: 30px;
+      height: 30px;
+      border: none;
+      margin-bottom: 12px;
+      &::before{
+        content: 'Menu';
+        margin-left: 40px;
+        font-size: $font-m;
+      }
+    }
+    &__tablist{
+      display: none;
+    }
+    &__tablist.cmp-tabs__show {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 8;
+      border-radius: 4px;
+      width: 100%;
+    }
+  }
 }

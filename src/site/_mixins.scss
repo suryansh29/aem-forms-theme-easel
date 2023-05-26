@@ -248,7 +248,7 @@
   box-shadow: 0 6px 12px 1px rgba($color: #000000, $alpha: 0);
   vertical-align: text-bottom;
   cursor: pointer;
-  color: $primary;
+  color: #000;
   font-size: $font-m;
   padding: $space-s $space-m;
   font-weight: 500;
@@ -311,7 +311,6 @@
     font-weight: 500;
     display: flex;
     align-items: center;
-    // background-color: $light-primary;
   }
 
   &--active::after {
@@ -325,7 +324,8 @@
   }
 
   &:hover {
-    color: $dark-gray;
+    color: $primary;
+    border-bottom-color: $primary;
   }
 
 }
