@@ -29,11 +29,11 @@
       height: 30px;
       border: none;
       margin-bottom: 12px;
-      &::before{
-        content: 'Menu';
-        margin-left: 40px;
-        font-size: $font-m;
-      }
+      // &::before{
+      //   content: 'Menu';
+      //   margin-left: 40px;
+      //   font-size: $font-m;
+      // }
     }
     &__tablist{
       display: none;

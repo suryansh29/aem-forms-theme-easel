@@ -10,6 +10,7 @@
 
   &__label {
     @include panel-label;
+    padding-top: 20px;
   }
 
   @include description;
