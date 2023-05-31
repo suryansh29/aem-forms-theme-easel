@@ -1,11 +1,11 @@
 .cmp-adaptiveform-container {
   &__wrapper {
     margin: 0 auto;
-    padding: 0 $space-m;
+    padding: 0 var(--space-m);
     box-sizing: border-box;
     max-width: 1020px;
     width: 100%;
-    padding: $space-s ;
+    padding: var(--space-s) ;
   }
 
   &--loading {

@@ -6,9 +6,9 @@
   &[data-cmp-valid=false] input,
   &[data-cmp-valid=false] textarea,
   &[data-cmp-valid=false] select {
-    background: $light-error ;
-    border: $border-error ;
-    outline-color: $error;
+    background: var(--light-error) ;
+    border: var(--border-error) ;
+    outline-color: var(--error);
   }
 
   &[data-cmp-valid=false]>&__shortdescription {
@@ -26,25 +26,25 @@
   div[data-cmp-required=true]>label::after {
     content: ' *';
     font-weight: bold;
-    color: $error;
+    color: var(--error);
   }
 
   // // remove this code
   // &.cmp-tabs,
   // &.cmp-adaptiveform-wizard,
   // &.cmp-accordion {
-  //   margin: $space-l 0;
+  //   margin: var(--space-l) 0;
   // }
 
 }
 
 @mixin label {
-  padding-right: $space-m;
+  padding-right: var(--space-m);
   box-sizing: border-box;
   opacity: 1;
-  color: $dark-gray;
+  color: var(--dark-primary);
   padding: 0;
-  font-size: $font-m;
+  font-size: var(--font-m);
   pointer-events: none;
   z-index: 11;
 }
@@ -53,33 +53,33 @@
   pointer-events: all;
   display: flex;
   align-items: center;
-  gap: $space-s;
+  gap: var(--space-s);
 }
 
 @mixin panel-label {
-  font-size: $font-l;
+  font-size: var(--font-l);
   font-weight: 500;
-  color: $dark-gray;
+  color: var(--dark-primary);
   opacity: 1;
   margin-top: 0;
-  margin-bottom: $space-s;
+  margin-bottom: var(--space-s);
   position: static;
 }
 
 @mixin widget {
-  border-radius: 0;
-  font-size: $font-m;
-  height: $field-height;
+  border-radius: var(--low-radius);
+  font-size: var(--font-m);
+  height: var(--field-height);
   background-color: transparent;
-  border: $border-light;
-  border-radius: $field-radius;
-  padding: 0 $space-s;
-  margin: $space-xs 0;
-  outline: $focus-outline;
+  border: var(--border-light);
+  border-radius: var(--field-radius);
+  padding: 0 var(--space-s);
+  margin: var(--space-xs) 0;
+  outline: var(--focus-outline);
   outline-width: 0px;
 
   &:hover:not([disabled]) {
-    border: $border-dark;
+    border: var(--border-dark);
     transition: border 0.3s ease-out;
   }
 
@@ -87,28 +87,28 @@
     background-color: white;
     border-color: transparent;
     outline-offset: 0;
-    outline: $focus-outline;
+    outline: var(--focus-outline);
     transition: outline 0.1s ease-out, border 0.1s ease-out;
   }
 
   &:disabled {
-    background-color: $disabled-color;
+    background-color: var(--disabled-color);
   }
 }
 
 @mixin long-description {
   display: flex;
   align-items: center;
-  background-color: $background-color;
-  border-radius: $field-radius;
+  background-color: var(--background-color);
+  border-radius: var(--field-radius);
   opacity: 1;
-  color: $dark-gray;
-  padding: $space-s;
-  font-size: $font-s;
+  color: var(--dark-primary);
+  padding: var(--space-s);
+  font-size: var(--font-s);
   font-weight: 500;
   pointer-events: none;
-  margin: $space-xs 0;
-  column-gap: $space-s;
+  margin: var(--space-xs) 0;
+  column-gap: var(--space-s);
 
   &::before {
     content: '';
@@ -125,10 +125,10 @@
 @mixin short-description {
   display: flex;
   position: static;
-  font-size: $font-s;
+  font-size: var(--font-s);
   font-weight: 500;
-  color: $gray;
-  margin: 0 0 $space-s 0;
+  color: var(--secondary);
+  margin: 0 0 var(--space-s) 0;
 }
 
 @mixin question-mark {
@@ -137,9 +137,9 @@
   top: 0;
   right: 0;
   padding: 0;
-  width: $font-m;
-  height: $font-m;
-  border-radius: 9px;
+  width: var(--font-m);
+  height: var(--font-m);
+  border-radius: var(--field-radius);
   background: url(./resources/images/question.svg) center center / cover no-repeat;
   cursor: pointer;
   border: none;
@@ -152,15 +152,15 @@
 
 @mixin error-message {
   display: none;
-  color: $error;
-  font-size: $font-s;
+  color: var(--error);
+  font-size: var(--font-s);
   font-weight: 500;
   margin: 0;
 
   &::before {
     content: '';
     background: url(./resources/images/error.svg) center center / cover no-repeat;
-    margin-right: $space-xs;
+    margin-right: var(--space-xs);
     height: 16px;
     min-width: 16px;
   }
@@ -203,14 +203,14 @@
 @mixin primary-button {
   width: 100%;
   display: block;
-  background: $primary;
+  background: var(--primary);
   border: none;
-  border-radius: $button-radius;
-  height: $tap-height;
-  padding: 0 $space-m;
+  border-radius: var(--button-radius);
+  height: var(--tap-height);
+  padding: 0 var(--space-m);
   cursor: pointer;
   color: #000;
-  font-size: $font-m;
+  font-size: var(--font-m);
   font-weight: 500;
 
   &:hover {
@@ -222,13 +222,13 @@
   }
 
   &:disabled {
-    background-color: $disabled-color;
+    background-color: var(--disabled-color);
     cursor: default;
   }
 
   &[data-cmp-enabled]:not([data-cmp-enabled=true]) {
-    background: $gray;
-    color: $very-light-gray;
+    background: var(--secondary);
+    color: var(--very-light-secondary);
   }
 
   @media (min-width: 640px) {
@@ -243,16 +243,16 @@
   justify-content: center;
   position: static;
   align-self: flex-start;
-  background: $background-color;
-  border-radius: $button-radius;
+  background: var(--background-color);
+  border-radius: var(--button-radius);
   box-shadow: 0 6px 12px 1px rgba($color: #000000, $alpha: 0);
   vertical-align: text-bottom;
   cursor: pointer;
   color: #000;
-  font-size: $font-m;
-  padding: $space-s $space-m;
+  font-size: var(--font-m);
+  padding: var(--space-s) var(--space-m);
   font-weight: 500;
-  margin: $space-s 0;
+  margin: var(--space-s) 0;
   opacity: 1;
 
   @media (min-width: 640px) {
@@ -266,7 +266,7 @@
 
   &:hover {
     position: relative;
-    background-color: $very-light-gray;
+    background-color: var(--very-light-secondary);
     box-shadow: 0 6px 12px 1px rgba($color: #000000, $alpha: .075);
     transform: translateY(-5%);
     scale: 102%;
@@ -274,7 +274,7 @@
   }
 
   &:disabled {
-    background-color: $disabled-color;
+    background-color: var(--disabled-color);
     cursor: default;
   }
 
@@ -282,7 +282,7 @@
 
 // for tabs on top & wizard
 @mixin tab-list {
-  padding: 0 $space-s;
+  padding: 0 var(--space-s);
   counter-reset: section;
   display: flex;
   flex-wrap: wrap;
@@ -294,20 +294,20 @@
 @mixin tab {
   padding: 0;
   background-color: transparent;
-  min-height: $tap-height;
+  min-height: var(--tap-height);
   line-height: 1.2;
-  color: $gray;
-  margin-right: $space-m;
-  font-size: $font-m;
+  color: var(--secondary);
+  margin-right: var(--space-m);
+  font-size: var(--font-m);
   display: flex;
   align-items: center;
   font-weight: 500;
-  border-radius: 0;
+  border-radius: var(--low-radius);
   border-width: 2px;
 
   &--active {
-    color: $primary;
-    border-color: $primary;
+    color: var(--primary);
+    border-color: var(--primary);
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -316,30 +316,30 @@
   &--active::after {
     content: '—';
     display: none;
-    color: $primary;
+    color: var(--primary);
   }
 
   &--active:hover {
-    border-bottom-color: $primary;
+    border-bottom-color: var(--primary);
   }
 
   &:hover {
-    color: $primary;
-    border-bottom-color: $primary;
+    color: var(--primary);
+    border-bottom-color: var(--primary);
   }
 
 }
 
 @mixin tab-panel {
   padding: 12px 40px;
-  border: $border-light;
+  border: var(--border-light);
   border-width: 1px;
-  border-radius: $button-radius;
-  background-color: white;
+  border-radius: var(--button-radius);
+  background-color: var(--light-primary);
   box-shadow: 0 6px 12px 1px rgba($color: #000000, $alpha: .03);
 
   @media (max-width: 480px) {
-    padding: $space-m;
+    padding: var(--space-m);
     width: 100%;
   }
 }
@@ -347,31 +347,31 @@
 // wizard tab
 @mixin wizard-tab {
   @include tab;
-  column-gap: $space-s;
+  column-gap: var(--space-s);
   padding: 0;
   border-bottom-width: 2px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  font-size: $font-m;
+  font-size: var(--font-m);
   font-weight: 500;
   transition: flex-grow ease .3s;
-  border-radius: 0;
+  border-radius: var(--low-radius);
   border-bottom-width: 2px;
-  border-bottom: $border-light;
+  border-bottom: var(--border-light);
   border-color: transparent;
 
   &::before {
     counter-increment: section;
     content: counter(section);
     margin-right: 0;
-    background-color: $very-light-gray;
+    background-color: var(--very-light-secondary);
     padding: 6px;
     line-height: .56;
-    border-radius: $button-radius;
-    color: $dark-gray;
+    border-radius: var(--button-radius);
+    color: var(--dark-primary);
     text-align: center;
-    font-size: $font-s;
+    font-size: var(--font-s);
     font-weight: bold;
   }
 
@@ -382,22 +382,22 @@
   &--active {
     flex-grow: 1;
     transition: flex-grow ease .3s;
-    color: $primary;
-    border-bottom: $focus-outline;
+    color: var(--primary);
+    border-bottom: var(--focus-outline);
     background-color: transparent;
   }
 
   &--active::before {
     counter-increment: section;
     content: counter(section);
-    margin-right: $space-s;
-    background-color: $primary;
+    margin-right: var(--space-s);
+    background-color: var(--primary);
     padding: 6px;
     line-height: .56;
-    border-radius: $button-radius;
+    border-radius: var(--button-radius);
     color: white;
     text-align: center;
-    font-size: $font-s;
+    font-size: var(--font-s);
     font-weight: bold;
   }
 }
@@ -406,7 +406,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: $tap-height;
+  height: var(--tap-height);
   position: static;
   cursor: pointer;
   @include secondary-button;
@@ -421,7 +421,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: $tap-height;
+  height: var(--tap-height);
   position: static;
   cursor: pointer;
   @include secondary-button;
@@ -436,7 +436,7 @@
   pointer-events: all;
   margin: 0;
   display: flex;
-  margin: $space-xs 0;
+  margin: var(--space-xs) 0;
 
   &.VERTICAL {
     flex-direction: column;
@@ -454,24 +454,24 @@
   pointer-events: all;
   display: flex;
   align-items: center;
-  color: $dark-gray;
-  column-gap: $space-s;
+  color: var(--dark-primary);
+  column-gap: var(--space-s);
   position: static;
   opacity: 1;
-  border-radius: $button-radius;
+  border-radius: var(--button-radius);
   border: none;
   cursor: pointer;
   margin: 0;
-  padding: $space-s;
+  padding: var(--space-s);
 
   &:hover {
-    background-color: $background-color;
+    background-color: var(--background-color);
     transition: background-color 0.3s ease-out, color 0.3s ease-out;
-    color: $dark-gray;
+    color: var(--dark-primary);
   }
 
   &:focus-within {
-    outline: $focus-outline;
+    outline: var(--focus-outline);
   }
 }
 
@@ -483,5 +483,5 @@ div[data-cmp-is="adaptiveFormCheckBoxGroup"],
 div[data-cmp-is="adaptiveFormFileInput"],
 div[data-cmp-is="adaptiveFormRadioButton"] {
   border: none;
-  margin: $space-s 0;
+  margin: var(--space-s) 0;
 }

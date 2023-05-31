@@ -1,6 +1,6 @@
 /* ===============Imaget================== */
 .cmp-image {
-  border: 1px solid $very-light-gray;
+  border: 1px solid var(--very-light-secondary);
   border-radius: 8px;
 
   &__image {

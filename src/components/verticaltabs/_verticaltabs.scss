@@ -15,16 +15,16 @@
     @include tab-list;
     width: 200px;
     display: block;
-    border: $border-light;
+    border: var(--border-light);
     border-bottom: none;
-    border-radius: $button-radius;
+    border-radius: var(--button-radius);
     padding: 0;
     margin-right: 12px;
   }
 
   &__tab {
     @include tab;
-    border-bottom: $border-light;
+    border-bottom: var(--border-light);
     margin: 0;
     padding-left: 12px;
   }

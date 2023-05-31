@@ -21,10 +21,10 @@
     @include wizard-tab;
 
     // &--active~.cmp-adaptiveform-wizard__tab {
-    //   color: $gray;
+    //   color: var(--secondary);
 
     //   &::before {
-    //     color: $dark-gray;
+    //     color: var(--dark-primary);
     //   }
     // }
   }

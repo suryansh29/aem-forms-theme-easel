@@ -32,7 +32,7 @@
       // &::before{
       //   content: 'Menu';
       //   margin-left: 40px;
-      //   font-size: $font-m;
+      //   font-size: var(--font-m);
       // }
     }
     &__tablist{
@@ -43,7 +43,7 @@
       flex-direction: column;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 8;
-      border-radius: 4px;
+      border-radius: var(--mid-radius);
       width: 100%;
     }
   }

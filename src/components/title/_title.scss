@@ -1,6 +1,6 @@
 .cmp-title__text{
-  font-size: $font-xl;
-  color: $dark-gray;
+  font-size: var(--font-xl);
+  color: var(--dark-primary);
   font-weight: 500;
   letter-spacing: -1;
   line-height: 1.1;

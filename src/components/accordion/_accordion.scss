@@ -7,7 +7,7 @@
   }
 
   &__header {
-    padding: 0 $space-s;
+    padding: 0 var(--space-s);
   }
 
   &__label {
@@ -17,19 +17,19 @@
   &__button {
     @include tab;
     border: none;
-    border-bottom: $border-light;
+    border-bottom: var(--border-light);
     border-width: 2px;
 
     &:hover {
-      color: $dark-gray;
+      color: var(--dark-primary);
     }
 
     &--expanded {
-      color: $primary;
-      border-color: $primary;
+      color: var(--primary);
+      border-color: var(--primary);
 
       &:hover {
-        color: $primary;
+        color: var(--primary);
       }
     }
   }
@@ -39,7 +39,7 @@
       display: block;
       content: '';
       background: url(./resources/images/Chevron-Right.svg) center center / cover no-repeat;
-      margin: 0 $space-s ;
+      margin: 0 var(--space-s) ;
       height: 16px;
       width: 16px;
     }

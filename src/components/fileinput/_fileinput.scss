@@ -14,9 +14,9 @@
 
   &__widgetlabel {
     @include secondary-button;
-    margin: $space-xs 0;
+    margin: var(--space-xs) 0;
     display: flex;
-    column-gap: $space-xs;
+    column-gap: var(--space-xs);
     align-items: center;
     pointer-events: all;
   }
@@ -35,16 +35,16 @@
   }
 
   input[type="file"] {
-    column-gap: $space-l;
+    column-gap: var(--space-l);
   }
 
   &__filedelete {
     float: right;
-    font-size: $font-m;
+    font-size: var(--font-m);
     text-transform: uppercase;
     line-height: 1;
     font-weight: 500;
-    color: $error;
+    color: var(--error);
     cursor: pointer;
   }
 

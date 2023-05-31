@@ -1,0 +1,46 @@
+:root{
+    //== Font
+    --font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-title: 'Source Serif Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    // ====== font size======
+    --font-xl: 40px; 
+    --font-l: 24px;
+    --font-m: 16px;
+    --font-s: 12px;
+
+    // ====== colors======
+    --secondary: rgb(109, 109, 109);
+    --light-secondary: #969696;
+    --very-light-secondary: #ddd;
+    --background-color: #eee;
+    --error: #eb3c36;
+    --light-error: rgba(235, 60, 54, 0.05);
+    --light-primary: #f5fdff;
+    --primary: #66d2ee;
+    --dark-primary: rgb(22, 22, 22);
+    --disabled-color: var(--background-color);
+    --focus-outline: 2px var(--primary) solid;
+    --error-outline: 2px var(--error) solid;
+    --border-light: 2px var(--background-color) solid;
+    --border-error: 2px var(--error) solid;
+    --border-dark: 2px var(--light-secondary) solid;
+    --body-background-color: #fff; //This is the background color of theme
+
+    // ====== space ======
+    --space-xs: 4px;
+    --space-s: 12px;
+    --space-m: 36px;
+    --space-l: 72px;
+    --space-xl: 144px; 
+    --field-radius: 6px;
+    --button-radius: 6px;
+    --low-radius: 0px;
+    --mid-radius: 4px;
+    --tap-height: 48px;
+    --field-height: 48px;
+
+    //== Grid
+    --max-col: 12;
+
+}

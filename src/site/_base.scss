@@ -1,13 +1,10 @@
 //== Defaults
 html,
 body {
-  color: $dark-gray;
-  font-size: $font-m;
-  background-color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-
-
+  color: var(--dark-primary);
+  font-size: var(--font-m);
+  background-color: var(--body-background-color);
+  font-family: var(--font-family) !important;
 }
 
 
